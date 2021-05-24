@@ -1,0 +1,31 @@
+
+Iseseisev töö, Dependencye Injection
+Ingvar Derešivski
+
+
+
+
+Mis on Dependencye Injection? 
+on tehnika, mille puhul objekt võtab vastu muid objekte, millest ta sõltub.
+
+Kuhu classi kirjutad dependency Injectioni koodi ja mis meetodi alla?
+Süstekomponenti saame kasutada kõikjal klassis. See käsitleb kõige tavalisemat stsenaariumi, kus klass nõuab ühte või mitut sõltuvust.
+Dependency Injectioni koodinäide tuua välja.
+
+ 
+
+Mis tähendab AddSingelton?
+Registreerimis viis, meetod mis määratleb teenuse eluea. 
+Üksikud teenused luuakse esmakordsel taotlemisel (või kui käivitatakse ConfigureServices, kui määrate seal eksemplari), siis kasutatakse igas järgmises taotluses sama eksemplari.
+
+Singeltoni teenusega on ainult üks eksemplar. Eksemplar luuakse siis, kui teenust esimest korda taotletakse ja seda üksikut eksemplari ühte eksemplari kasutab kogu järgnev http-taotlus kogu rakenduses.
+
+Mis tähendab AddTransient?
+Registreerimis viis, meetod mis määrab teenuse eluea. Ajutised teenused luuakse iga kord, kui neid taotletakse. See eluiga sobib kõige paremini kergete kodakondsuseta teenuste jaoks.
+
+Transit, siirdeteenuse korral antakse uus eksemplar iga kord, kui eksemplari taotletakse, olenemata sellest, kas see kuulub sama http-päringu ulatusse või mitmesse http-päringusse.
+
+Mis tähendab AddScoped?
+Registreerimis viis, meetod mis määrab teenuse eluea. Reguleeritavad eluaegsed teenused luuakse üks kord taotluse kohta.
+
+Scoperd, reguleeritava teenusega saame sama eksemplari antud http-päringu ulatuses, kuid uue eksemplari erinevate http-taotluste korral.
